@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    implementation group: 'com.github.lgooddatepicker', name: 'LGoodDatePicker', version: '11.2.1'
+    implementation group: 'com.oracle.database.jdbc', name: 'ojdbc11', version: '21.5.0.0'
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+}

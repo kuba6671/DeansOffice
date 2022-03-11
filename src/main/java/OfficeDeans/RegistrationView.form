@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="OfficeDeans.RegistrationView">
+  <grid id="10852" binding="RegistrationPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="8" width="500" height="521"/>
+    </constraints>
+    <properties>
+      <preferredSize width="325" height="550"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="31430" binding="ButtonPanel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="325" height="300"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="a9ec3" class="javax.swing.JButton" binding="register">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <actionCommand value="register"/>
+              <text value="Zarejestruj"/>
+            </properties>
+          </component>
+          <component id="3a839" class="javax.swing.JButton" binding="close">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Zamknij"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="79138" binding="RegistrationForm" layout-manager="GridLayoutManager" row-count="9" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="c198" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+                <preferred-size width="120" height="16"/>
+              </grid>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="ccd2e" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="120" height="16"/>
+                  <text value="Numer indeksu"/>
+                </properties>
+              </component>
+              <component id="2e1c2" class="javax.swing.JTextField" binding="idText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="32361" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="12a5f" class="javax.swing.JLabel" binding="nazwiskoLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="120" height="16"/>
+                  <text value="Nazwisko"/>
+                </properties>
+              </component>
+              <component id="f71d4" class="javax.swing.JTextField" binding="surnameText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                  <text value=""/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="14cb" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="efbe6" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="120" height="16"/>
+                  <text value="Imię"/>
+                </properties>
+              </component>
+              <component id="fb008" class="javax.swing.JTextField" binding="nameText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="bde7" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="4a6db" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="120" height="16"/>
+                  <text value="Telefon"/>
+                </properties>
+              </component>
+              <component id="3ae75" class="javax.swing.JTextField" binding="phoneText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="542c5" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="e0c05" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="120" height="16"/>
+                  <text value="Mail"/>
+                </properties>
+              </component>
+              <component id="669dc" class="javax.swing.JTextField" binding="mailText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="26e2f" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="e9424" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="120" height="16"/>
+                  <text value="Grupa"/>
+                </properties>
+              </component>
+              <component id="eebdb" class="javax.swing.JTextField" binding="groupText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="cfc8c" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="c2c0d" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="120" height="16"/>
+                  <text value="Wiek"/>
+                </properties>
+              </component>
+              <component id="d86ad" class="javax.swing.JTextField" binding="ageText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="c943d" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="861d5" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="121" height="16"/>
+                  <text value="Kierunek studiow"/>
+                </properties>
+              </component>
+              <component id="41277" class="javax.swing.JTextField" binding="fieldOfStudyText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="63509" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="5559f" class="javax.swing.JLabel">
+                <constraints/>
+                <properties>
+                  <preferredSize width="121" height="16"/>
+                  <text value="Haslo"/>
+                </properties>
+              </component>
+              <component id="55b99" class="javax.swing.JPasswordField" binding="passwordText">
+                <constraints/>
+                <properties>
+                  <preferredSize width="181" height="30"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>

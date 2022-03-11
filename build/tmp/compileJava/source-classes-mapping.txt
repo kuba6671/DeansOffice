@@ -1,0 +1,96 @@
+OfficeDeans/packagePerson/Teacher.java
+ OfficeDeans.packagePerson.Teacher
+OfficeDeans/Lesson.java
+ OfficeDeans.Lesson
+OfficeDeans/ExamView.java
+ OfficeDeans.ExamView
+ OfficeDeans.ExamView$1
+OfficeDeans/ProposalView.java
+ OfficeDeans.ProposalView
+ OfficeDeans.ProposalView$1
+OfficeDeans/OfficeView.java
+ OfficeDeans.OfficeView
+ OfficeDeans.OfficeView$1
+ OfficeDeans.OfficeView$2
+ OfficeDeans.OfficeView$3
+ OfficeDeans.OfficeView$4
+ OfficeDeans.OfficeView$5
+OfficeDeans/packageProposal/PendingProposalState.java
+ OfficeDeans.packageProposal.PendingProposalState
+OfficeDeans/packagePerson/Student.java
+ OfficeDeans.packagePerson.Student
+OfficeDeans/timetableView.java
+ OfficeDeans.timetableView
+ OfficeDeans.timetableView$1
+OfficeDeans/GUI.java
+ OfficeDeans.GUI
+ OfficeDeans.GUI$1
+OfficeDeans/packageProposal/AcceptedProposalState.java
+ OfficeDeans.packageProposal.AcceptedProposalState
+OfficeDeans/packageProposal/Proposal.java
+ OfficeDeans.packageProposal.Proposal
+OfficeDeans/packagePerson/OfficeEmployee.java
+ OfficeDeans.packagePerson.OfficeEmployee
+OfficeDeans/StudentView.java
+ OfficeDeans.StudentView
+ OfficeDeans.StudentView$1
+ OfficeDeans.StudentView$2
+ OfficeDeans.StudentView$3
+ OfficeDeans.StudentView$4
+ OfficeDeans.StudentView$5
+OfficeDeans/packageExam/Exam.java
+ OfficeDeans.packageExam.Exam
+OfficeDeans/MarkView.java
+ OfficeDeans.MarkView
+ OfficeDeans.MarkView$1
+OfficeDeans/packageExam/ProjectDefense.java
+ OfficeDeans.packageExam.ProjectDefense
+OfficeDeans/Mark.java
+ OfficeDeans.Mark
+OfficeDeans/packageProposal/ProposalState.java
+ OfficeDeans.packageProposal.ProposalState
+OfficeDeans/packageProposal/RejectedProposalState.java
+ OfficeDeans.packageProposal.RejectedProposalState
+OfficeDeans/Group.java
+ OfficeDeans.Group
+OfficeDeans/packageExam/Colloquium.java
+ OfficeDeans.packageExam.Colloquium
+OfficeDeans/addLessonToTimetable.java
+ OfficeDeans.addLessonToTimetable
+ OfficeDeans.addLessonToTimetable$1
+OfficeDeans/MainWindow.java
+ OfficeDeans.MainWindow
+OfficeDeans/examiningProposal.java
+ OfficeDeans.examiningProposal
+ OfficeDeans.examiningProposal$1
+OfficeDeans/RegistrationView.java
+ OfficeDeans.RegistrationView
+ OfficeDeans.RegistrationView$1
+ OfficeDeans.RegistrationView$2
+OfficeDeans/packagePerson/Person.java
+ OfficeDeans.packagePerson.Person
+OfficeDeans/packageExam/FinalTest.java
+ OfficeDeans.packageExam.FinalTest
+OfficeDeans/StudentsList.java
+ OfficeDeans.StudentsList
+ OfficeDeans.StudentsList$1
+ OfficeDeans.StudentsList$2
+ OfficeDeans.StudentsList$3
+OfficeDeans/AddMark.java
+ OfficeDeans.AddMark
+ OfficeDeans.AddMark$1
+ OfficeDeans.AddMark$2
+ OfficeDeans.AddMark$3
+ OfficeDeans.AddMark$4
+ OfficeDeans.AddMark$5
+ OfficeDeans.AddMark$6
+ OfficeDeans.AddMark$7
+OfficeDeans/addExam.java
+ OfficeDeans.addExam
+OfficeDeans/TeacherView.java
+ OfficeDeans.TeacherView
+ OfficeDeans.TeacherView$1
+ OfficeDeans.TeacherView$2
+ OfficeDeans.TeacherView$3
+ OfficeDeans.TeacherView$4
+ OfficeDeans.TeacherView$5
