@@ -30,7 +30,7 @@
                   <text value="Grupa"/>
                 </properties>
               </component>
-              <component id="8b531" class="javax.swing.JTextField" binding="groupField">
+              <component id="ced56" class="javax.swing.JComboBox" binding="groupComboBox">
                 <constraints/>
                 <properties>
                   <preferredSize width="181" height="30"/>
@@ -52,7 +52,7 @@
                   <text value="Przedmiot"/>
                 </properties>
               </component>
-              <component id="c146" class="javax.swing.JTextField" binding="subjectField">
+              <component id="8236d" class="javax.swing.JComboBox" binding="subjectComboBox">
                 <constraints/>
                 <properties>
                   <preferredSize width="181" height="30"/>

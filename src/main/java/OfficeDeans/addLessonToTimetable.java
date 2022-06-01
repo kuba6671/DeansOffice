@@ -11,7 +11,6 @@ public class addLessonToTimetable extends JFrame implements ActionListener {
     private JPanel addLessonPanel;
     private JPanel addLessonForm;
     private JPanel buttonPanel;
-    private JTextField subjectField;
     private JComboBox groupComboBox;
     private JComboBox weekdayComboBox;
     private TimePicker hourTimePicker;
@@ -19,6 +18,7 @@ public class addLessonToTimetable extends JFrame implements ActionListener {
     private JButton resetButton;
     private JButton closeButton;
     private JComboBox teacherComboBox;
+    private JComboBox subjectComboBox;
     Connection con;
     Statement stmt;
 
@@ -54,6 +54,10 @@ public class addLessonToTimetable extends JFrame implements ActionListener {
                 teacherFullName = teacherFullName.replaceAll("\\s+"," ");
                 teacherComboBox.addItem(teacherFullName);
             }
+            ResultSet subjects = stmt.executeQuery("SELECT * from Subject");
+            while(subjects.next()) {
+                subjectComboBox.addItem(subjects.getString("name"));
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -70,7 +74,7 @@ public class addLessonToTimetable extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String subjectName = null;
+        String subjectName = (String) subjectComboBox.getSelectedItem();
         String groupName = null;
         int subjectID=0;
         int groupID=0;
@@ -80,12 +84,12 @@ public class addLessonToTimetable extends JFrame implements ActionListener {
         String lessonTime = null;
         int count;
         if(e.getSource()==addButton){
-            if(!subjectField.getText().isEmpty()){
+            /*if(!subjectField.getText().isEmpty()){
                 subjectName = subjectField.getText();
-            }
+            }*/
             try {
                 ResultSet subjects = stmt.executeQuery("SELECT * from subject where name='"+subjectName+"'");
-                if(!subjects.next()){
+                /*if(!subjects.next()){
                     count = stmt.executeUpdate("insert into subject values(subject_seq.NEXTVAL,'"+subjectName+"')");
                     if(count>0)
                         System.out.println("records inserted succesfully");
@@ -96,8 +100,8 @@ public class addLessonToTimetable extends JFrame implements ActionListener {
                     while(subjects.next()) {
                         subjectID = subjects.getInt("subjectID");
                     }
-                }
-                else{
+                }*/
+                if(subjects.next()){
                     subjectID = subjects.getInt("subjectID");
                 }
 

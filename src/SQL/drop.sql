@@ -16,3 +16,4 @@ DROP SEQUENCE subject_seq;
 DROP SEQUENCE exam_seq;
 DROP SEQUENCE timetable_seq;
 DROP SEQUENCE lesson_seq;
+DROP SEQUENCE mark_seq;

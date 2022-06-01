@@ -18,14 +18,14 @@ import java.util.Locale;
 public class addExam extends JFrame implements ActionListener {
     private JPanel addExamPanel;
     private JPanel examForm;
-    private JTextField groupField;
-    private JTextField subjectField;
     private JPanel DatePanel;
     private JPanel DateTextPanel;
     private JComboBox typeComboBox;
     private JPanel buttonPanel;
     private JButton submitButton;
     private JButton exitButton;
+    private JComboBox groupComboBox;
+    private JComboBox subjectComboBox;
     JFrame exam;
     DatePicker datePicker1;
     TimePicker timePicker1;
@@ -65,8 +65,19 @@ public class addExam extends JFrame implements ActionListener {
         timePicker1.setSize(80,30);
         myDatePanel.add(timePicker1);
 
+        try {
+            ResultSet subjects = stmt.executeQuery("SELECT * from Subject");
+            while (subjects.next()) {
+                subjectComboBox.addItem(subjects.getString("name"));
+            }
 
-
+            ResultSet groups = stmt.executeQuery("SELECT * from StudentGroup");
+            while (groups.next()) {
+                groupComboBox.addItem(groups.getString("name"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         exam.setVisible(true);
     }
 
@@ -88,42 +99,25 @@ public class addExam extends JFrame implements ActionListener {
                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm",Locale.ENGLISH);
                 date = LocalDateTime.parse(dateFormString, formatter);
             }
-            if(!this.groupField.getText().isEmpty()){
-                groupName = groupField.getText();
+                groupName = (String) groupComboBox.getSelectedItem();
                 ResultSet rs = null;
                 try {
-                    rs = stmt.executeQuery("select * from studentGroup where name =" + groupName);
-                    if(!rs.next()){
-                        System.out.println("Podana grupa nie istnieje");
-                    }
-                    else{
+                    rs = stmt.executeQuery("select * from studentGroup where name ='" + groupName+"'");
+                    if(rs.next()){
                         groupID = rs.getInt("groupID");
                     }
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
-            }
-            if(!this.subjectField.getText().isEmpty()){
-                subject = subjectField.getText();
+            subject = (String) subjectComboBox.getSelectedItem();
                 try {
-                    ResultSet rs = stmt.executeQuery("select * from subject where name = '" + subject+"'");
-                    if(!rs.next()){
-                        count = stmt.executeUpdate("insert into subject values(subject_seq.NEXTVAL,'"+subject+"')");
-                        if(count>0)
-                            System.out.println("records subject inserted succesfully");
-                        else
-                            System.out.println("records insertion failed");
-                        rs = stmt.executeQuery("select * from subject where name = '" + subject+"'");
-                        while(rs.next()) {
+                    rs = stmt.executeQuery("select * from subject where name = '" + subject+"'");
+                    if(rs.next()){
                             subjectID = rs.getInt("subjectID");
                         }
-                    }else {
-                        subjectID = rs.getInt("subjectID");
-                    }
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                 }
-            }
             String selectedType = (String) typeComboBox.getSelectedItem();
             Exam exam = null;
             if(selectedType == "Egzamin"){
@@ -141,7 +135,7 @@ public class addExam extends JFrame implements ActionListener {
             exam.setType();
 
             try {
-                String sql = "INSERT INTO EXAM (EXAMID, \"date\", GROUPID, TEACHERID, SUBJECTID, EXAMTYPE) " +
+                String sql = "INSERT INTO EXAM (EXAMID, examdate, GROUPID, TEACHERID, SUBJECTID, type) " +
                         "VALUES (exam_seq.NEXTVAL,TO_DATE(?,'YYYY-MM-DD HH24:MI')," +
                         "?,?,?,?)";
                 PreparedStatement prepStmt = con.prepareStatement(sql);

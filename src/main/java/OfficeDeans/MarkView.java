@@ -3,10 +3,7 @@ package OfficeDeans;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class MarkView extends JFrame {
     private JTable markTable;
@@ -26,9 +23,12 @@ public class MarkView extends JFrame {
         String[][] data = new String[20][2];
 
         try{
-            ResultSet examine = stmt.executeQuery("select subject.name, value from mark" +
+            String sql ="select subject.name, value from mark" +
                     " JOIN subject ON subject.subjectid =mark.subjectid" +
-                    " where mark.indexnumber ="+indexNumber);
+                    " where mark.indexnumber =?";
+            PreparedStatement prepStmt = con.prepareStatement(sql);
+            prepStmt.setInt(1,indexNumber);
+            ResultSet examine = prepStmt.executeQuery();
             while(examine.next()){
                 data[i][j] = examine.getString("name");
                 j++;

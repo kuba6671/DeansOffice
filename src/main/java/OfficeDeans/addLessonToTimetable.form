@@ -71,7 +71,7 @@
                   <text value="Przedmiot"/>
                 </properties>
               </component>
-              <component id="965a1" class="javax.swing.JTextField" binding="subjectField">
+              <component id="fa4ba" class="javax.swing.JComboBox" binding="subjectComboBox">
                 <constraints/>
                 <properties>
                   <preferredSize width="181" height="30"/>

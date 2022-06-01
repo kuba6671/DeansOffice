@@ -111,10 +111,10 @@ public class ProposalView extends JFrame implements ActionListener {
                         fieldOfStudy.getText(),id.getText(),dateFormString,session,income);
 
                 try {
-                    count = stmt.executeUpdate("INSERT INTO PROPOSAL (PROPOSALID, PROPOSALNAME, \"date\", \"session\"" +
-                            ", INCOME, INDEXNUMBER) VALUES " + "(proposal_seq.NEXTVAL,'"+SocialGrantForm.getProposalName()+
+                    count = stmt.executeUpdate("INSERT INTO PROPOSAL (PROPOSALID, PROPOSALNAME, PROPOSALDATE, ACADEMICSESSION" +
+                            ", INCOME, INDEXNUMBER, DECISION) VALUES " + "(proposal_seq.NEXTVAL,'"+SocialGrantForm.getProposalName()+
                             "',TO_DATE('"+dateFormString+"','YYYY-MM-DD'),'"+SocialGrantForm.getSession()+
-                            "',"+SocialGrantForm.getIncome()+","+SocialGrantForm.getId()+")");
+                            "',"+SocialGrantForm.getIncome()+","+SocialGrantForm.getId()+", 'Oczekujace')");
                     if(count>0)
                         System.out.println("records inserted succesfully");
                     else
@@ -134,10 +134,10 @@ public class ProposalView extends JFrame implements ActionListener {
                         fieldOfStudy.getText(),id.getText(),dateFormString,session,avg);
 
                 try {
-                    count = stmt.executeUpdate("INSERT INTO PROPOSAL (PROPOSALID, PROPOSALNAME, \"date\", \"session\"" +
-                            ", AVG, INDEXNUMBER) VALUES " + "(proposal_seq.NEXTVAL,'"+FellowShipForm.getProposalName()+
+                    count = stmt.executeUpdate("INSERT INTO PROPOSAL (PROPOSALID, PROPOSALNAME, PROPOSALDATE, ACADEMICSESSION" +
+                            ", MARKAVG, INDEXNUMBER,DECISION) VALUES " + "(proposal_seq.NEXTVAL,'"+FellowShipForm.getProposalName()+
                             "','"+FellowShipForm.getDate()+"','"+FellowShipForm.getSession()+
-                            "',"+FellowShipForm.getAvg()+","+FellowShipForm.getId()+")");
+                            "',"+FellowShipForm.getAvg()+","+FellowShipForm.getId()+",'Oczekujace')");
                     if(count>0)
                         System.out.println("records inserted succesfully");
                     else

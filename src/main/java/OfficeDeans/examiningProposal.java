@@ -59,13 +59,14 @@ public class examiningProposal extends JFrame implements ActionListener {
         proposalIDComboBox.addItem("Wybierz wniosek");
 
         try {
-            ResultSet proposalsID = stmt.executeQuery("SELECT * from proposal ");
+            ResultSet proposalsID = stmt.executeQuery("SELECT * from proposal WHERE DECISION='Oczekujace'");
             while (proposalsID.next()) {
+
                 tmpID = proposalsID.getString("proposalName");
                 tmpID = tmpID.replaceAll("\\s+"," ");
-                if(tmpID.equals("Stypendium socjalne ")) {
+                if(tmpID.equals("Stypendium socjalne")) {
                     SocialID.add(proposalsID.getString("proposalID"));
-                }else if( tmpID.equals("Stypendium naukowe ")){
+                }else if( tmpID.equals("Stypendium naukowe")){
                     FellowID.add(proposalsID.getString("proposalID"));
                 }
             }
@@ -126,9 +127,9 @@ public class examiningProposal extends JFrame implements ActionListener {
                         nameField.setText(proposals.getString("name"));
                         surnameField.setText(proposals.getString("surname"));
                         fieldOfStudyField.setText(proposals.getString("fieldOfStudy"));
-                        sessionField.setText(proposals.getString("session"));
+                        sessionField.setText(proposals.getString("academicsession"));
                         indexField.setText(proposals.getString("indexNumber"));
-                        String dateFormat = proposals.getString("date");
+                        String dateFormat = proposals.getString("proposaldate");
                         String[] parts = dateFormat.split(" ");
                         dateFormat = parts[0];
                         dateField.setText(dateFormat);
@@ -159,13 +160,13 @@ public class examiningProposal extends JFrame implements ActionListener {
                         nameField.setText(proposals.getString("name"));
                         surnameField.setText(proposals.getString("surname"));
                         fieldOfStudyField.setText(proposals.getString("fieldOfStudy"));
-                        sessionField.setText(proposals.getString("session"));
+                        sessionField.setText(proposals.getString("academicsession"));
                         indexField.setText(proposals.getString("indexNumber"));
-                        String dateFormat = proposals.getString("date");
+                        String dateFormat = proposals.getString("proposaldate");
                         String[] parts = dateFormat.split(" ");
                         dateFormat = parts[0];
                         dateField.setText(dateFormat);
-                        avgField.setText(proposals.getString("avg"));
+                        avgField.setText(proposals.getString("markavg"));
                     }
                     else{
                         resetField();

@@ -32,9 +32,6 @@ public class AddMark extends JFrame{
 
     private final DefaultTableModel model = new DefaultTableModel(0, 6);
 
-
-    //String[] header = {"ID","Przedmiot1", "Przedmiot2", "Przedmiot3", "Przedmiot4","Przedmiot5","StID"};
-
     public AddMark(String user, Connection con, Statement stmt) {
         JFrame marks = this;
         marks.setSize(400, 400);
@@ -42,8 +39,6 @@ public class AddMark extends JFrame{
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(MarkPanel);
 
-        //model.setColumnIdentifiers(header);
-        //markTable = new JTable(model);
 
         FieldChoose.addItem("Wybierz kierunek");
         GroupChoose.addItem("Wybierz grupę");
@@ -57,7 +52,6 @@ public class AddMark extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 AddMark.this.selectedField = FieldChoose.getSelectedItem().toString();
-                //SubjectChoose.removeAllItems();
                 groupCombo(selectedField, con, stmt);
 
             }
@@ -186,10 +180,12 @@ public class AddMark extends JFrame{
     private void subjectCombo(String group, Connection con, Statement stmt){
         SubjectChoose.removeAllItems();
         try {
-            ResultSet rs = stmt.executeQuery("select DISTINCT subject.name from subject" +
+            System.out.println("group= "+group);
+            /*ResultSet rs = stmt.executeQuery("select DISTINCT subject.name from subject" +
                     " join exam on subject.subjectid = exam.subjectid" +
                     " join studentgroup on exam.groupid = studentgroup.groupid" +
-                    " WHERE studentgroup.name = '" + group + "'");
+                    " WHERE studentgroup.name = '" + group + "'");*/
+            ResultSet rs = stmt.executeQuery("SELECT * FROM SUBJECT");
             while(rs.next())
             {
                 SubjectChoose.addItem(rs.getString("name"));

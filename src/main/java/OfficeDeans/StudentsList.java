@@ -111,7 +111,7 @@ public class StudentsList extends JFrame {
     private void groupSort(String field,String group, Connection con, Statement stmt) {
         try {
             System.out.println("Connection is created successfully:");
-            ResultSet rs = stmt.executeQuery("select * from student join studentgroup on student.groupid = studentgroup.groupid where studentgroup.name = " + group + "AND fieldofstudy = '" + field + "'");
+            ResultSet rs = stmt.executeQuery("select * from student join studentgroup on student.groupid = studentgroup.groupid where studentgroup.name = '" + group + "' AND fieldofstudy = '" + field + "'");
             while (rs.next()) {
                 Object[] row = {rs.getInt("indexnumber"), rs.getString("surname"), rs.getString("name"),rs.getInt("Age"),rs.getInt("phonenumber"), rs.getString("mail")};
                 model.addRow(row);

@@ -22,19 +22,19 @@ public class ExamView extends JFrame {
         String[][] data = new String[20][3];
         String[] columnNames = {"Przedmiot", "Data", "Typ"};
         try{
-            String sql ="select subject.name, \"date\", examtype from exam " +
+            String sql ="select subject.name, examdate, exam.type from exam " +
                     "JOIN StudentGroup ON StudentGroup.groupID =exam.groupID" +
                     " JOIN subject ON exam.subjectID = subject.subjectID" +
-                    " where exam.groupID =? ORDER BY \"date\"";
+                    " where exam.groupID =? ORDER BY examdate";
             PreparedStatement prepStmt = con.prepareStatement(sql);
             prepStmt.setString(1,Integer.toString(groupID));
             ResultSet examine = prepStmt.executeQuery();
             while(examine.next()){
                 data[i][j] = examine.getString("name");
                 j++;
-                data[i][j] = examine.getString("date");
+                data[i][j] = examine.getString("examdate");
                 j++;
-                data[i][j]= examine.getString("examtype");
+                data[i][j]= examine.getString("type");
                 i++;
                 j=0;
             }

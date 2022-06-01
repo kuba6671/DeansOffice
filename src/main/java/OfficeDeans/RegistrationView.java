@@ -77,7 +77,7 @@ public class RegistrationView extends GUI {
             int groupID=0;
             String groupName = null;
 
-            ResultSet rs = stmt.executeQuery("select * from StudentGroup where name = " + group);
+            ResultSet rs = stmt.executeQuery("select * from StudentGroup where name = '" + group+"'");
             if(!rs.next()){
                 count = stmt.executeUpdate("insert into StudentGroup values(group_seq.NEXTVAL,'"+group+"')");
                 if(count>0)
