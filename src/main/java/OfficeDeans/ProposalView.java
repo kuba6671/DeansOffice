@@ -115,11 +115,15 @@ public class ProposalView extends JFrame implements ActionListener {
                             ", INCOME, INDEXNUMBER, DECISION) VALUES " + "(proposal_seq.NEXTVAL,'"+SocialGrantForm.getProposalName()+
                             "',TO_DATE('"+dateFormString+"','YYYY-MM-DD'),'"+SocialGrantForm.getSession()+
                             "',"+SocialGrantForm.getIncome()+","+SocialGrantForm.getId()+", 'Oczekujace')");
-                    if(count>0)
+                    if(count>0) {
                         System.out.println("records inserted succesfully");
-                    else
+                        JOptionPane.showMessageDialog(null,"Wniosek zostal pomyslnie dodany","Info",1);
+                    }
+                    else {
                         System.out.println("records insertion failed");
+                    }
                 } catch (SQLException throwables) {
+                    JOptionPane.showMessageDialog(null,"Wniosek zawiera bledne dane","Info",1);
                     throwables.printStackTrace();
                 }
 

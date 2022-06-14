@@ -84,23 +84,9 @@ public class addLessonToTimetable extends JFrame implements ActionListener {
         String lessonTime = null;
         int count;
         if(e.getSource()==addButton){
-            /*if(!subjectField.getText().isEmpty()){
-                subjectName = subjectField.getText();
-            }*/
             try {
                 ResultSet subjects = stmt.executeQuery("SELECT * from subject where name='"+subjectName+"'");
-                /*if(!subjects.next()){
-                    count = stmt.executeUpdate("insert into subject values(subject_seq.NEXTVAL,'"+subjectName+"')");
-                    if(count>0)
-                        System.out.println("records inserted succesfully");
-                    else
-                        System.out.println("records insertion failed");
 
-                    subjects = stmt.executeQuery("SELECT * from subject where name='"+subjectName+"'");
-                    while(subjects.next()) {
-                        subjectID = subjects.getInt("subjectID");
-                    }
-                }*/
                 if(subjects.next()){
                     subjectID = subjects.getInt("subjectID");
                 }

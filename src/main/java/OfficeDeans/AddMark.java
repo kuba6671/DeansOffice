@@ -180,11 +180,6 @@ public class AddMark extends JFrame{
     private void subjectCombo(String group, Connection con, Statement stmt){
         SubjectChoose.removeAllItems();
         try {
-            System.out.println("group= "+group);
-            /*ResultSet rs = stmt.executeQuery("select DISTINCT subject.name from subject" +
-                    " join exam on subject.subjectid = exam.subjectid" +
-                    " join studentgroup on exam.groupid = studentgroup.groupid" +
-                    " WHERE studentgroup.name = '" + group + "'");*/
             ResultSet rs = stmt.executeQuery("SELECT * FROM SUBJECT");
             while(rs.next())
             {

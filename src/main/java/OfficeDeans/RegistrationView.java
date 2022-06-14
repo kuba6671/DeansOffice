@@ -100,15 +100,12 @@ public class RegistrationView extends GUI {
             count = stmt.executeUpdate("insert into Student values("+student.getIndexNumber()+",'"+student.getPassword()+"','"
                     +student.getName()+"','" +student.getSurname()+ "',"+student.getAge()+",'"
                     +student.getPhoneNumber()+"','" +student.getMail()+"','"+student.getFieldOfStudy()+"',"+group1.getGroupID()+")");
-            if(count>0)
+            if(count>0) {
                 System.out.println("records inserted succesfully");
-            else
-                System.out.println("records insertion failed");
-
-            System.out.println("Record is inserted in the table successfully..................");
-        } catch (SQLException excep) {
-            excep.printStackTrace();
+                JOptionPane.showMessageDialog(null,"Dodano pomyslnie","Info",1);
+            }
         } catch (Exception excep) {
+            JOptionPane.showMessageDialog(null,"Podano bledne dane","Info",1);
             excep.printStackTrace();
         }
     }
